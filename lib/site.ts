@@ -104,6 +104,36 @@ export const gallery = [
   },
 ] as const;
 
+// Full photo archive (everything we have, including the hero shot). Used on /archive.
+export const archivePhotos = [
+  {
+    src: "/photos/mission-1.jpeg",
+    alt: "Volunteers in hard hats raising a wooden roof frame together",
+    caption: "Raising a roof, hand over hand.",
+  },
+  ...gallery.map(({ src, alt, caption }) => ({ src, alt, caption })),
+] as const;
+
+// Videos for the archive. The source site had no real footage (only a decorative
+// graphic), so this starts empty. Add entries as { src | youTubeId, poster?, title }.
+export type ArchiveVideo =
+  | { kind: "file"; src: string; poster?: string; title: string }
+  | { kind: "youtube"; youTubeId: string; title: string };
+
+export const videos: ArchiveVideo[] = [];
+
+// Official application forms hosted on the parish's existing site.
+export const applicationForms = [
+  {
+    label: "Youth application (8th–12th grade)",
+    href: "https://www.stmarymissiontrip.com/_files/ugd/b2e33f_4e06b0fe4dbf435c90e7cfe7ec522726.docx?dn=Mexican%20Mission%20youth%20application_v1.docx",
+  },
+  {
+    label: "Adult application (18+)",
+    href: "https://www.stmarymissiontrip.com/_files/ugd/b2e33f_85e727c6bec34fcb9c77dfbafcd5e0dc.docx?dn=Mexico%20Mission%20Adult%20application_v1.docx",
+  },
+] as const;
+
 // Map: the mission works in Colonia La Morita, on the east side of Tijuana.
 export const location = {
   query: "Colonia La Morita, Tijuana, Baja California, Mexico",

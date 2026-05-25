@@ -54,8 +54,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/#impact" className="text-cream/70 hover:text-sun-400">
-                  See our impact
+                <Link href="/archive" className="text-cream/70 hover:text-sun-400">
+                  Photo & video archive
                 </Link>
               </li>
             </ul>
