@@ -117,9 +117,11 @@ export default function ArchivePage() {
             <a
               key={f.href}
               href={f.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-clay-200 bg-white px-5 py-3 text-sm font-semibold text-clay-700 transition-colors hover:bg-clay-50"
             >
-              <DownloadIcon /> {f.label}
+              <OpenIcon /> {f.label}
             </a>
           ))}
         </div>
@@ -134,10 +136,10 @@ export default function ArchivePage() {
   );
 }
 
-function DownloadIcon() {
+function OpenIcon() {
   return (
     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden>
-      <path d="M12 4v10m0 0 4-4m-4 4-4-4M5 19h14" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14 5h5v5M19 5l-8 8M12 5H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

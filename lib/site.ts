@@ -129,15 +129,16 @@ export const videos: ArchiveVideo[] = [
   },
 ];
 
-// Official application forms hosted on the parish's existing site.
+// Official application forms — converted from the parish's Word docs to PDF so they
+// open in-browser instead of downloading.
 export const applicationForms = [
   {
     label: "Youth application (8th–12th grade)",
-    href: "https://www.stmarymissiontrip.com/_files/ugd/b2e33f_4e06b0fe4dbf435c90e7cfe7ec522726.docx?dn=Mexican%20Mission%20youth%20application_v1.docx",
+    href: "/forms/youth-application.pdf",
   },
   {
     label: "Adult application (18+)",
-    href: "https://www.stmarymissiontrip.com/_files/ugd/b2e33f_85e727c6bec34fcb9c77dfbafcd5e0dc.docx?dn=Mexico%20Mission%20Adult%20application_v1.docx",
+    href: "/forms/adult-application.pdf",
   },
 ] as const;
 
