@@ -75,7 +75,9 @@ export default function ArchivePage() {
                     {v.kind === "youtube" ? (
                       <iframe
                         className="h-full w-full"
-                        src={`https://www.youtube-nocookie.com/embed/${v.youTubeId}`}
+                        src={`https://www.youtube-nocookie.com/embed/${v.youTubeId}${
+                          v.start ? `?start=${v.start}` : ""
+                        }`}
                         title={v.title}
                         loading="lazy"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

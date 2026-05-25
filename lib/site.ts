@@ -118,9 +118,16 @@ export const archivePhotos = [
 // graphic), so this starts empty. Add entries as { src | youTubeId, poster?, title }.
 export type ArchiveVideo =
   | { kind: "file"; src: string; poster?: string; title: string }
-  | { kind: "youtube"; youTubeId: string; title: string };
+  | { kind: "youtube"; youTubeId: string; title: string; start?: number };
 
-export const videos: ArchiveVideo[] = [];
+export const videos: ArchiveVideo[] = [
+  {
+    kind: "youtube",
+    youTubeId: "XviQx1TQcEw",
+    title: "Mexico Mission 2025",
+    start: 31,
+  },
+];
 
 // Official application forms hosted on the parish's existing site.
 export const applicationForms = [
