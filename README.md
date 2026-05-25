@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saint Mary's Mexican Mission Trip
 
-## Getting Started
+A small, engaging, mobile-friendly website for Saint Mary's annual mission trip to
+Tijuana, Mexico — a modern rebuild of stmarymissiontrip.com. Built with Next.js 16
+(App Router), TypeScript, and Tailwind CSS v4, with an interactive registration form
+backed by Supabase.
 
-First, run the development server:
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site runs fully without any configuration. Until Supabase is connected, the
+registration API validates and accepts submissions but logs them to the server
+console instead of saving them (`persisted: false`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Connecting the registration database (Supabase)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Create (or pick) a Supabase project.
+2. Run the migration in `supabase/migrations/0001_registrations.sql` — either with
+   `supabase db push` (CLI) or by pasting it into the SQL editor. It creates the
+   `registrations` table with RLS enabled (writes go only through the server, using
+   the service-role key — applicant data is never exposed to the browser).
+3. Copy `.env.example` to `.env.local` and fill in:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+4. Restart `npm run dev`. Submissions now persist (`persisted: true`).
 
-## Learn More
+## Editing trip content
 
-To learn more about Next.js, take a look at the following resources:
+All copy — dates, pricing, contacts, FAQs, eligibility, key dates — lives in
+**`lib/site.ts`**. Update next year's trip there; every page reads from it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server |
+| `npm run build` | Production build (also type-checks) |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |

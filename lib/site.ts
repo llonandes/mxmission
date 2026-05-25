@@ -1,0 +1,93 @@
+// Single source of truth for all mission-trip content.
+// Sourced & verified from stmarymissiontrip.com (2026 trip).
+
+export const trip = {
+  name: "Saint Mary's Mexican Mission Trip",
+  year: 2026,
+  destination: "Tijuana, Mexico",
+  colonia: "Colonia La Morita",
+  startDate: "2026-06-14",
+  endDate: "2026-06-20",
+  dateLabel: "June 14 – 20, 2026",
+  duration: "6 nights · 5 days",
+  includes: ["All meals", "Round-trip transportation", "Lodging for 6 nights"],
+} as const;
+
+export const pricing = {
+  youth: { label: "Teens (8th–12th grade)", amount: 250 },
+  adult: { label: "Adults (18+)", amount: 780 },
+  scholarships: true,
+} as const;
+
+export const eligibility = [
+  "Open to teens entering 9th grade through graduated 12th graders — you must be at least an 8th-grade graduate to attend.",
+  "Open to adults 18 and older.",
+  "No construction experience needed — we'll teach you everything on site.",
+] as const;
+
+// "Build a Future. Build a Home." — core pillars of the trip.
+export const pillars = [
+  {
+    title: "Build a Home",
+    body: "Working side by side with families in Colonia La Morita, we frame, raise, and finish simple homes that give a family a safe, dry place to live.",
+    icon: "home",
+  },
+  {
+    title: "Build a Future",
+    body: "A home changes everything — children stay in school, parents find stable work, and a whole community grows stronger one rooftop at a time.",
+    icon: "sun",
+  },
+  {
+    title: "Build Teamwork",
+    body: "Teens and adults serve shoulder to shoulder. You'll leave with new skills, lifelong friendships, and a faith put into action.",
+    icon: "users",
+  },
+] as const;
+
+export const includedDetails = [
+  "Six nights of group lodging",
+  "All meals throughout the trip",
+  "Round-trip transportation from Saint Mary's",
+  "Building materials and tools",
+  "Experienced trip leaders & on-site guidance",
+] as const;
+
+// Prep / formation meetings leading up to the trip.
+export const keyDates = [
+  { date: "2026-03-19", label: "March 19", time: "7:00 PM", place: "Youth Center", note: "Info & orientation meeting" },
+  { date: "2026-04-16", label: "April 16", time: "7:00 PM", place: "Youth Center", note: "Team meeting & planning" },
+  { date: "2026-05-20", label: "May 20", time: "7:00 PM", place: "Serra Cottage", note: "Mandatory for adults" },
+  { date: "2026-05-27", label: "May 27", time: "7:00 PM", place: "Serra Cottage", note: "Final meeting — all participants" },
+  { date: "2026-06-14", label: "June 14", time: "", place: "Departure", note: "We leave for Tijuana" },
+] as const;
+
+export const contacts = [
+  { name: "Afonso Almeida", role: "Trip Coordinator", phone: "(408) 482-2220", lang: "" },
+  { name: "Clorete Almeida", role: "Registration", phone: "(408) 482-0554", lang: "English" },
+  { name: "Fernando López", role: "Registration", phone: "(408) 931-0670", lang: "English / Español" },
+] as const;
+
+export const email = "stmp-mexico-mission-info@googlegroups.com";
+
+export const faqs = [
+  {
+    q: "Do I need a passport?",
+    a: "Yes. All participants need a valid passport (or passport card) to cross the U.S.–Mexico border. Make sure yours is current well before June.",
+  },
+  {
+    q: "Do I need construction experience?",
+    a: "Not at all. Most volunteers have never built anything before. Experienced leaders guide every step, and there's a job for every skill level.",
+  },
+  {
+    q: "What's included in the cost?",
+    a: "Your fee covers six nights of lodging, all meals, round-trip transportation, building materials, and trip leadership. Scholarships are available — just ask.",
+  },
+  {
+    q: "Can teens attend without a parent?",
+    a: "Yes. Teens 8th-grade-graduate and up may attend with the group. The May 20 meeting is mandatory for adults, and the May 27 meeting is for everyone.",
+  },
+  {
+    q: "Is it safe?",
+    a: "We travel as a supervised group, stay in secure group lodging, and have led this trip for years. Safety briefings happen at the pre-trip meetings.",
+  },
+] as const;
