@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
+import VideoFeature from "@/components/VideoFeature";
 import LocationMap from "@/components/LocationMap";
 import {
   CalendarIcon,
@@ -28,6 +29,7 @@ export default function Home() {
       <Hero />
       <Pillars />
       <Gallery />
+      <VideoFeature />
       <Impact />
       <Details />
       <LocationMap />
