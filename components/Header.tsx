@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 
 const links = [
   { href: "/#about", label: "The Trip" },
-  { href: "/#impact", label: "Our Impact" },
+  { href: "/#gallery", label: "Photos" },
   { href: "/#details", label: "Cost & Details" },
+  { href: "/#location", label: "Location" },
   { href: "/#dates", label: "Key Dates" },
-  { href: "/#faq", label: "FAQ" },
 ];
 
 export default function Header() {

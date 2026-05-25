@@ -69,6 +69,49 @@ export const contacts = [
 
 export const email = "stmp-mexico-mission-info@googlegroups.com";
 
+// Photos from past trips (sourced from the parish's existing site).
+export const heroPhoto = {
+  src: "/photos/mission-1.jpeg",
+  alt: "Volunteers in hard hats raising a wooden roof frame together",
+};
+
+export const gallery = [
+  {
+    src: "/photos/mission-6.jpg",
+    alt: "The full mission team on the steps in red 'Here 2 Serve' shirts",
+    caption: "Here to serve — the whole team, ready to work.",
+    span: true, // featured / wider tile
+  },
+  {
+    src: "/photos/mission-2.jpeg",
+    alt: "Volunteers and a local family in front of a newly finished home",
+    caption: "Handing the keys to a family, in front of their new home.",
+  },
+  {
+    src: "/photos/mission-4.jpeg",
+    alt: "Close-up of volunteers hammering a wooden floor frame",
+    caption: "Hammer in hand — learning to build on site.",
+  },
+  {
+    src: "/photos/mission-3.jpeg",
+    alt: "Youth volunteers smiling with a local child, mountains behind",
+    caption: "Friendships that cross the border.",
+  },
+  {
+    src: "/photos/mission-5.jpeg",
+    alt: "Volunteers preparing meals together indoors",
+    caption: "Meals shared together, every day of the trip.",
+  },
+] as const;
+
+// Map: the mission works in Colonia La Morita, on the east side of Tijuana.
+export const location = {
+  query: "Colonia La Morita, Tijuana, Baja California, Mexico",
+  label: "Colonia La Morita, Tijuana",
+  blurb:
+    "We work in Colonia La Morita, a hillside neighborhood on the east side of Tijuana — about a 30-minute drive south of the San Diego border crossing.",
+};
+
 export const faqs = [
   {
     q: "Do I need a passport?",

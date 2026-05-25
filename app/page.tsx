@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Gallery from "@/components/Gallery";
+import LocationMap from "@/components/LocationMap";
 import {
   CalendarIcon,
   CheckIcon,
@@ -11,6 +14,7 @@ import {
   contacts,
   eligibility,
   faqs,
+  heroPhoto,
   includedDetails,
   keyDates,
   pillars,
@@ -23,8 +27,10 @@ export default function Home() {
     <>
       <Hero />
       <Pillars />
+      <Gallery />
       <Impact />
       <Details />
+      <LocationMap />
       <Dates />
       <Faq />
       <ClosingCta />
@@ -34,15 +40,23 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-clay-600 text-cream">
-      <div className="absolute inset-0 bg-grain opacity-40" />
+    <section className="relative overflow-hidden bg-clay-700 text-cream">
+      <Image
+        src={heroPhoto.src}
+        alt={heroPhoto.alt}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       <div
-        className="absolute inset-0 opacity-90"
+        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 80% at 80% -10%, #f0a020 0%, #db5a2c 35%, #a3381b 80%)",
+            "linear-gradient(100deg, rgba(106,43,28,0.94) 0%, rgba(163,56,27,0.82) 42%, rgba(219,90,44,0.40) 100%)",
         }}
       />
+      <div className="absolute inset-0 bg-grain opacity-30" />
       <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-32 sm:pt-40">
         <div className="max-w-2xl animate-fade-up">
           <span className="inline-flex items-center gap-2 rounded-full bg-cream/15 px-4 py-1.5 text-sm font-medium backdrop-blur">
