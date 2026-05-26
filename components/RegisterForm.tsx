@@ -187,7 +187,7 @@ export default function RegisterForm() {
             <Checkbox
               checked={data.agree}
               onChange={(v) => update("agree", v)}
-              label="I understand this reserves my spot and a coordinator will contact me about payment, forms, and my passport."
+              label="I understand this reserves my spot and a coordinator will contact me about the $100 deposit, forms, and my passport."
             />
             {error && (
               <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>
@@ -409,8 +409,8 @@ function SuccessCard({ name }: { name: string }) {
         You&apos;re on the list{name ? `, ${name}` : ""}!
       </h2>
       <p className="mt-4 text-lg text-ink-soft">
-        Thank you for signing up. A trip coordinator will reach out soon about
-        payment, the application forms, and your passport. Watch your email and
+        Thank you for signing up. A trip coordinator will reach out soon about the
+        $100 deposit, the application forms, and your passport. Watch your email and
         phone.
       </p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

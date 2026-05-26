@@ -13,6 +13,7 @@ import {
 } from "@/components/Icons";
 import {
   contacts,
+  deposit,
   eligibility,
   faqs,
   heroPhoto,
@@ -20,6 +21,7 @@ import {
   keyDates,
   pillars,
   pricing,
+  requiredDocs,
   trip,
 } from "@/lib/site";
 
@@ -241,6 +243,19 @@ function Details() {
             <PriceCard tier={pricing.adult.label} amount={pricing.adult.amount} featured />
           </div>
 
+          <div className="mt-4 flex items-start gap-3 rounded-2xl border border-clay-200 bg-clay-50 p-4">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-clay-500 font-display text-sm font-bold text-cream">
+              ${deposit.amount}
+            </span>
+            <p className="text-sm text-ink-soft">
+              A <strong className="text-clay-700">${deposit.amount} deposit</strong>{" "}
+              holds your spot and counts toward your total fee. It&apos;s refundable
+              until{" "}
+              <strong className="text-clay-700">{deposit.nonRefundableAfter}</strong>,
+              non-refundable after.
+            </p>
+          </div>
+
           <ul className="mt-6 space-y-2">
             {eligibility.map((e) => (
               <li key={e} className="flex gap-3 text-sm text-ink-soft">
@@ -266,12 +281,18 @@ function Details() {
                 </li>
               ))}
             </ul>
-            <div className="mt-7 rounded-2xl bg-clay-50 p-5">
-              <p className="text-sm text-ink-soft">
-                <strong className="text-clay-700">Bring a valid passport.</strong>{" "}
-                Everyone crossing into Mexico needs one — check yours well before
-                June.
-              </p>
+            <div className="mt-7 border-t border-clay-100 pt-6">
+              <h4 className="font-display text-base font-bold text-ink">
+                What you&apos;ll need to turn in
+              </h4>
+              <ul className="mt-4 space-y-2.5">
+                {requiredDocs.map((d) => (
+                  <li key={d} className="flex gap-2.5 text-sm text-ink-soft">
+                    <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-clay-500" />
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
             <Link
               href="/register"

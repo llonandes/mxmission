@@ -19,6 +19,22 @@ export const pricing = {
   scholarships: true,
 } as const;
 
+// A deposit holds your spot and counts toward the total fee.
+export const deposit = {
+  amount: 100,
+  nonRefundableAfter: "May 1, 2026",
+} as const;
+
+// Documents needed to complete a registration packet (from the official forms).
+export const requiredDocs = [
+  "$100 deposit, due with registration",
+  "Copy of a valid passport — required to re-enter the U.S. (or a valid green card)",
+  "Copy of your current medical insurance card",
+  "Completed participant & guidelines forms",
+  "Parental permission & medical release (teens)",
+  "Driver's license, Youth Protection training & fingerprinting (adults)",
+] as const;
+
 export const eligibility = [
   "Open to teens entering 9th grade through graduated 12th graders — you must be at least an 8th-grade graduate to attend.",
   "Open to adults 18 and older.",
@@ -162,6 +178,14 @@ export const faqs = [
   {
     q: "What's included in the cost?",
     a: "Your fee covers six nights of lodging, all meals, round-trip transportation, building materials, and trip leadership. Scholarships are available — just ask.",
+  },
+  {
+    q: "Is there a deposit?",
+    a: "Yes — a $100 deposit is due with your registration and counts toward your total trip fee. The deposit is fully refundable until May 1, 2026, and non-refundable after that date.",
+  },
+  {
+    q: "What documents do I need to turn in?",
+    a: "A complete packet includes your $100 deposit, a copy of a valid passport (or green card), a copy of your current medical insurance card, and the signed participant forms. Teens also need a parental permission & medical release; new adults need a driver's license, Youth Protection training, and fingerprinting.",
   },
   {
     q: "Can teens attend without a parent?",
