@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { contacts, email, trip } from "@/lib/site";
+import { contacts, email, registration, trip } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -44,9 +44,21 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <Link href="/register" className="text-cream hover:text-sun-400">
-                  Register for the 2026 trip →
-                </Link>
+                {registration.open ? (
+                  <Link href="/register" className="text-cream hover:text-sun-400">
+                    Register for the {trip.year} trip →
+                  </Link>
+                ) : (
+                  <Link href="/register" className="text-cream hover:text-sun-400">
+                    <span className="line-through opacity-70">
+                      Register for the {trip.year} trip
+                    </span>{" "}
+                    <span className="font-semibold text-sun-400">· Closed</span>
+                  </Link>
+                )}
+              </li>
+              <li className="text-cream/70">
+                {registration.nextBatchYear} batch opens {registration.nextBatchOpens}
               </li>
               <li>
                 <a href={`mailto:${email}`} className="text-cream hover:text-sun-400 break-all">

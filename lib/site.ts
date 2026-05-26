@@ -13,6 +13,16 @@ export const trip = {
   includes: ["All meals", "Round-trip transportation", "Lodging for 6 nights"],
 } as const;
 
+// Registration status. Set `open: true` when the 2027 batch opens to re-enable
+// the form and switch every CTA back to its live state.
+export const registration = {
+  open: false,
+  ctaLabel: "Register for 2026",
+  closedBadge: "Closed",
+  nextBatchYear: 2027,
+  nextBatchOpens: "February 2027",
+} as const;
+
 export const pricing = {
   youth: { label: "Teens (8th–12th grade)", amount: 250 },
   adult: { label: "Adults (18+)", amount: 780 },

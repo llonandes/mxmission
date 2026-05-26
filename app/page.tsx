@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import Gallery from "@/components/Gallery";
 import VideoFeature from "@/components/VideoFeature";
 import LocationMap from "@/components/LocationMap";
+import RegisterCta from "@/components/RegisterCta";
 import {
   CalendarIcon,
   CheckIcon,
@@ -21,6 +22,7 @@ import {
   keyDates,
   pillars,
   pricing,
+  registration,
   requiredDocs,
   trip,
 } from "@/lib/site";
@@ -77,13 +79,8 @@ function Hero() {
             grow, and be changed.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              href="/register"
-              className="rounded-full bg-cream px-7 py-3.5 text-center font-semibold text-clay-700 shadow-lg transition-transform hover:-translate-y-0.5"
-            >
-              Register for {trip.year}
-            </Link>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <RegisterCta tone="dark" size="lg" withNote />
             <Link
               href="#about"
               className="rounded-full border border-cream/40 px-7 py-3.5 text-center font-semibold text-cream transition-colors hover:bg-cream/10"
@@ -294,12 +291,9 @@ function Details() {
                 ))}
               </ul>
             </div>
-            <Link
-              href="/register"
-              className="mt-6 block rounded-full bg-clay-500 px-6 py-3.5 text-center font-semibold text-cream transition-colors hover:bg-clay-600"
-            >
-              Start your registration
-            </Link>
+            <div className="mt-6">
+              <RegisterCta tone="light" size="lg" block withNote />
+            </div>
           </div>
         </Reveal>
       </div>
@@ -415,19 +409,31 @@ function ClosingCta() {
     <div className="bg-clay-600">
       <div className="mx-auto max-w-4xl px-5 py-20 text-center text-cream">
         <Reveal>
-          <h2 className="font-display text-4xl font-extrabold sm:text-5xl">
-            Will you join us this summer?
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-cream/90">
-            Spots fill up. Reserve yours for {trip.dateLabel} and start preparing
-            for a week you&apos;ll never forget.
-          </p>
-          <Link
-            href="/register"
-            className="mt-8 inline-block rounded-full bg-cream px-8 py-4 font-semibold text-clay-700 shadow-lg transition-transform hover:-translate-y-0.5"
-          >
-            Register now
-          </Link>
+          {registration.open ? (
+            <>
+              <h2 className="font-display text-4xl font-extrabold sm:text-5xl">
+                Will you join us this summer?
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-lg text-cream/90">
+                Spots fill up. Reserve yours for {trip.dateLabel} and start
+                preparing for a week you&apos;ll never forget.
+              </p>
+            </>
+          ) : (
+            <>
+              <h2 className="font-display text-4xl font-extrabold sm:text-5xl">
+                The {trip.year} trip is full.
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-lg text-cream/90">
+                Registration for {trip.dateLabel} is now closed — thank you to
+                everyone joining us. The {registration.nextBatchYear} batch opens{" "}
+                {registration.nextBatchOpens}; check back then to claim your spot.
+              </p>
+            </>
+          )}
+          <div className="mt-8 flex justify-center">
+            <RegisterCta tone="dark" size="lg" withNote />
+          </div>
         </Reveal>
       </div>
     </div>

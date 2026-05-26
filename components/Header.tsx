@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import RegisterCta from "@/components/RegisterCta";
 
 const links = [
   { href: "/#about", label: "The Trip" },
@@ -51,12 +52,7 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/register"
-            className="rounded-full bg-clay-500 px-5 py-2.5 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-clay-600 hover:shadow-md"
-          >
-            Register
-          </Link>
+          <RegisterCta tone="light" size="sm" />
         </div>
 
         <button
@@ -86,13 +82,9 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/register"
-              onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-clay-500 px-5 py-3 text-center text-base font-semibold text-cream"
-            >
-              Register for 2026
-            </Link>
+            <div className="mt-2" onClick={() => setOpen(false)}>
+              <RegisterCta tone="light" size="lg" block withNote />
+            </div>
           </div>
         </div>
       )}
